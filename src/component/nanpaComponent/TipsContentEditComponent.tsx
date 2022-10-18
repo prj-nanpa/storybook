@@ -27,7 +27,7 @@ export const TipsContentEditComponent = (props: Props) => {
           ` ${select ? " opacity-100 " : " opacity-50 "}` +
           ` rounded-lg ${Color()} py-3 px-4 ` +
           " h-9 " +
-          " text-sm" +
+          " font-bold text-sm text-white " +
           " hover:cursor-pointer"
         }
         onClick={onClick}

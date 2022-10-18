@@ -8,7 +8,7 @@ export default {
   component: ButtonRegisterComponent,
   argTypes: {
     color: {
-      options: ["blue", "red"],
+      options: ["blue", "red", "green"],
       control: { type: "radio" },
     },
   },

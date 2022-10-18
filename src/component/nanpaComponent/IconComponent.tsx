@@ -11,7 +11,7 @@ export const IconComponent = (props: Props) => {
     <>
       <div
         className={
-          "flex items-center " +
+          "flex items-center flex-shrink-0 " +
           " overflow-hidden " +
           " rounded-2xl " +
           " w-20 h-20"

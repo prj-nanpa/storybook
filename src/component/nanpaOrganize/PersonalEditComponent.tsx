@@ -3,10 +3,10 @@ import { GrInstagram, GrMail } from "react-icons/gr";
 import { BsTwitter } from "react-icons/bs";
 import { FaFacebookSquare } from "react-icons/fa";
 import React from "react";
-import { TipsContentComponent } from "component/nanpaComponent/TipsContentComponent";
 import { ButtonNormalComponent } from "component/nanpaComponent/ButtonNormalComponent";
 import { MiniContentEditComponent } from "component/nanpaComponent/MiniContentEditComponent";
 import { IconContentEditComponent } from "component/nanpaComponent/IconContentEditComponent";
+import { TipsContentEditComponent } from "component/nanpaComponent/TipsContentEditComponent";
 
 type Props = {
   personalLink: string;
@@ -77,20 +77,23 @@ export const PersonalEditComponent = (props: Props) => {
                 "inline-flex flex-row flex-wrap gap-2" + " w-full h-auto"
               }
             >
-              <TipsContentComponent
+              <TipsContentEditComponent
                 text="コンテント"
                 color="red"
                 onClick={onClick}
+                select={true}
               />
-              <TipsContentComponent
+              <TipsContentEditComponent
                 text="コンテント"
                 color="blue"
                 onClick={onClick}
+                select={true}
               />
-              <TipsContentComponent
+              <TipsContentEditComponent
                 text="コンテント"
-                color="gray"
+                color="blue"
                 onClick={onClick}
+                select={true}
               />
             </div>
           </div>
