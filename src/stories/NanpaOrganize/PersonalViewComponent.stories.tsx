@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { PersonalViewComponent } from "component/nanpaOrganize/PersonalViewComponent";
 
 export default {
-  title: "Nanpa/Personal",
+  title: "Nanpa/Organize/Personal",
   component: PersonalViewComponent,
 } as ComponentMeta<typeof PersonalViewComponent>;
 

@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { CardContentComponent } from "component/nanpaComponent/CardContentComponent";
 
 export default {
-  title: "Nanpa/CardComponent",
+  title: "Nanpa/Component/CardComponent",
   component: CardContentComponent,
 } as ComponentMeta<typeof CardContentComponent>;
 

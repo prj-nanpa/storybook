@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { ButtonCreateFloatComponent } from "component/nanpaComponent/ButtonCreateFloatComponent";
 
 export default {
-  title: "Nanpa/Button",
+  title: "Nanpa/Component/Button",
   component: ButtonCreateFloatComponent,
 } as ComponentMeta<typeof ButtonCreateFloatComponent>;
 

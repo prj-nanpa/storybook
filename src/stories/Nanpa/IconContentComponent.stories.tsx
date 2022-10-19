@@ -8,7 +8,7 @@ import { FaFacebookSquare } from "react-icons/fa";
 import { IconContentComponent } from "component/nanpaComponent/IconContentComponent";
 
 export default {
-  title: "Nanpa/IconContent",
+  title: "Nanpa/Component/IconContent",
   component: IconContentComponent,
 } as ComponentMeta<typeof IconContentComponent>;
 

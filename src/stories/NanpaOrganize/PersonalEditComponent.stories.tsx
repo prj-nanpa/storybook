@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import { PersonalEditComponent } from "component/nanpaOrganize/PersonalEditComponent";
 export default {
-  title: "Nanpa/Personal",
+  title: "Nanpa/Organize/Personal",
   component: PersonalEditComponent,
 } as ComponentMeta<typeof PersonalEditComponent>;
 

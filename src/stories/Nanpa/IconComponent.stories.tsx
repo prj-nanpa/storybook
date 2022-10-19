@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { IconComponent } from "component/nanpaComponent/IconComponent";
 
 export default {
-  title: "Nanpa/Icon",
+  title: "Nanpa/Component/Icon",
   component: IconComponent,
 } as ComponentMeta<typeof IconComponent>;
 

@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { SearchFormComponent } from "component/nanpaOrganize/SearchFormComponent";
 
 export default {
-  title: "Nanpa/SearchForm",
+  title: "Nanpa/Organize/SearchForm",
   component: SearchFormComponent,
 } as ComponentMeta<typeof SearchFormComponent>;
 

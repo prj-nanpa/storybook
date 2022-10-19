@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { DeadlineBordComponent } from "component/nanpaComponent/DeadlineBordComponent";
 
 export default {
-  title: "Nanpa/Deadline",
+  title: "Nanpa/Component/Deadline",
   component: DeadlineBordComponent,
 } as ComponentMeta<typeof DeadlineBordComponent>;
 

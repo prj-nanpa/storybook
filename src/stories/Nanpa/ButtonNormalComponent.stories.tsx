@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { ButtonNormalComponent } from "component/nanpaComponent/ButtonNormalComponent";
 
 export default {
-  title: "Nanpa/Button",
+  title: "Nanpa/Component/Button",
   component: ButtonNormalComponent,
 } as ComponentMeta<typeof ButtonNormalComponent>;
 

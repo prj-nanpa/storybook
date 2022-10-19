@@ -71,7 +71,8 @@ export const CommentComponent = (props: Props) => {
       >
         <div
           className={
-            "inline-flex flex-col gap-y-5 overflow-y-scroll " + "w-full h-96"
+            "inline-flex flex-col items-center gap-y-5 overflow-y-scroll " +
+            "w-full h-96"
           }
         >
           <ACommentComponent
@@ -96,7 +97,7 @@ export const CommentComponent = (props: Props) => {
             target={"@dtrz"}
           />
         </div>
-        <div className={"inline-flex flex-col " + "w-full "}>
+        <div className={"inline-flex flex-col " + "w-full max-w-3xl "}>
           <div className={"inline-flex flex-row " + " w-full "}>
             <MiniContentEditComponent text="" />
             <div
@@ -109,7 +110,7 @@ export const CommentComponent = (props: Props) => {
               <TbSend className="h-7 w-7 text-green-500" />
             </div>
           </div>
-          <div></div>
+          <div>{/* error message */}</div>
         </div>
       </div>
     </>

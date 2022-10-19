@@ -6,7 +6,7 @@ import { GrMail } from "react-icons/gr";
 import { IconContentEditComponent } from "component/nanpaComponent/IconContentEditComponent";
 
 export default {
-  title: "Nanpa/IconContent",
+  title: "Nanpa/Component/IconContent",
   component: IconContentEditComponent,
 } as ComponentMeta<typeof IconContentEditComponent>;
 

@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { MiniContentComponent } from "component/nanpaComponent/MiniContentComponent";
 
 export default {
-  title: "Nanpa/Mini",
+  title: "Nanpa/Component/Mini",
   component: MiniContentComponent,
 } as ComponentMeta<typeof MiniContentComponent>;
 

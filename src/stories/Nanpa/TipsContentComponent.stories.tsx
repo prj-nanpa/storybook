@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { TipsContentComponent } from "component/nanpaComponent/TipsContentComponent";
 
 export default {
-  title: "Nanpa/Tips",
+  title: "Nanpa/Component/Tips",
   component: TipsContentComponent,
   argTypes: {
     color: {

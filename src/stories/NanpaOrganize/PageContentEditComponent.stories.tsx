@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import { PageContentEditComponent } from "component/nanpaOrganize/PageContentEditComponent";
 export default {
-  title: "Nanpa/Page",
+  title: "Nanpa/Organize/Page",
   component: PageContentEditComponent,
 } as ComponentMeta<typeof PageContentEditComponent>;
 

@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { SearchLinkComponent } from "component/nanpaComponent/SearchLinkComponent";
 
 export default {
-  title: "Nanpa/SearchLink",
+  title: "Nanpa/Component/SearchLink",
   component: SearchLinkComponent,
 } as ComponentMeta<typeof SearchLinkComponent>;
 

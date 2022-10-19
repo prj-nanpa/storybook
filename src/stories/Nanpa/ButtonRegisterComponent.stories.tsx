@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { ButtonRegisterComponent } from "component/nanpaComponent/ButtonRegisterComponent";
 
 export default {
-  title: "Nanpa/Button",
+  title: "Nanpa/Component/Button",
   component: ButtonRegisterComponent,
   argTypes: {
     color: {
