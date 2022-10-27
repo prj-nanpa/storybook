@@ -14,5 +14,29 @@ const Template: ComponentStory<typeof SearchFormComponent> = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
-  text: "https://placehold.jp/150x150.png",
+  onClick: () => {
+    console.log("point");
+  },
+  tagList: [
+    {
+      tagColor: "red",
+      tagId: 0,
+      tagValue: "red",
+    },
+    {
+      tagColor: "blue",
+      tagId: 1,
+      tagValue: "blue",
+    },
+    {
+      tagColor: "green",
+      tagId: 2,
+      tagValue: "green",
+    },
+    {
+      tagColor: "gray",
+      tagId: 3,
+      tagValue: "gary",
+    },
+  ],
 };

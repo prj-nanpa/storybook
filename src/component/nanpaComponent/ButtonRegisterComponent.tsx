@@ -27,7 +27,8 @@ export const ButtonRegisterComponent = (props: Props) => {
           "flex justify-center items-center " +
           ` rounded-lg ${Color()} ` +
           " w-64 md:w-96 h-24 md:h-36" +
-          " text-white font-bold"
+          " text-white font-bold " +
+          " hover:cursor-pointer"
         }
         onClick={onClick}
       >

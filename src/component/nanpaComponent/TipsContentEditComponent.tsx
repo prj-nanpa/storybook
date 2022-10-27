@@ -15,6 +15,8 @@ export const TipsContentEditComponent = (props: Props) => {
         return "button-color-red";
       case "blue":
         return "button-color-blue";
+      case "green":
+        return "button-color-green";
       default:
         return "button-color-gray";
     }

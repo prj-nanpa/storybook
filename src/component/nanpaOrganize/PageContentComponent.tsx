@@ -1,9 +1,15 @@
 import { IconComponent } from "component/nanpaComponent/IconComponent";
 import React from "react";
+import { TagType } from "types/TagType";
+import { UserMiniInfoType } from "types/UserMiniInfoType";
 
 type StringNumber = {
   text: string;
   number: string;
+};
+type TextToContentProp = {
+  text: string;
+  content: string;
 };
 const NumberOfPeople = (props: StringNumber) => {
   const { text, number } = props;
@@ -53,11 +59,6 @@ const NumberOfPrice = (props: StringNumber) => {
     </>
   );
 };
-
-type TextToContentProp = {
-  text: string;
-  content: string;
-};
 const TextToContent = (props: TextToContentProp) => {
   const { text, content } = props;
   return (
@@ -86,11 +87,47 @@ const TextToContent = (props: TextToContentProp) => {
 };
 
 type Props = {
-  text: string;
+  eventId: number;
+  userId: string;
+  eventOwner: UserMiniInfoType;
+  eventLeftDate: number;
+  eventImage: string;
+  eventName: string;
+  eventNote: string;
+  eventDeadline: string;
+  eventDate: string;
+  eventPlace: string;
+  eventBudget: number;
+  eventMinGuest: string;
+  eventMaxGuest: string;
+  eventCreatedDate: string;
+  eventGuests: UserMiniInfoType[];
+  eventGuestLength: number;
+  eventTags: TagType[];
+  eventTagsId: number[];
 };
 
 export const PageContentComponent = (props: Props) => {
-  const { text } = props;
+  const {
+    eventBudget,
+    eventCreatedDate,
+    eventDate,
+    eventDeadline,
+    eventGuestLength,
+    eventGuests,
+    eventId,
+    eventImage,
+    eventLeftDate,
+    eventMaxGuest,
+    eventMinGuest,
+    eventName,
+    eventNote,
+    eventOwner,
+    eventPlace,
+    eventTags,
+    eventTagsId,
+    userId,
+  } = props;
   const onClick = () => {
     console.log("point");
   };
@@ -103,8 +140,8 @@ export const PageContentComponent = (props: Props) => {
           " w-full max-w-5xl h-auto "
         }
       >
-        <NumberOfPeople text="最小募集人数" number="1" />
-        <NumberOfPeople text="最大募集人数" number="2" />
+        <NumberOfPeople text="最小募集人数" number={eventMinGuest} />
+        <NumberOfPeople text="最大募集人数" number={eventMaxGuest} />
         <div
           className={
             "inline-flex flex-row justify-around items-center " +
@@ -121,12 +158,12 @@ export const PageContentComponent = (props: Props) => {
           <div
             className={"inline-flex items-center justify-center w-1/2 text-4xl"}
           >
-            <IconComponent img={text} onClick={onClick} />
+            <IconComponent img={eventImage} onClick={onClick} />
           </div>
         </div>
-        <NumberOfPrice text="予算" number="1000" />
-        <TextToContent text="日時" content="7/19" />
-        <TextToContent text="場所" content="池袋" />
+        <NumberOfPrice text="予算" number={eventBudget.toString()} />
+        <TextToContent text="日時" content={eventDate} />
+        <TextToContent text="場所" content={eventPlace} />
         <div
           className={"inline-flex flex-col gap-y-4 " + "w-full md:max-w-md "}
         >
@@ -143,13 +180,13 @@ export const PageContentComponent = (props: Props) => {
               " w-full "
             }
           >
-            <IconComponent img={text} onClick={onClick} />
-            <IconComponent img={text} onClick={onClick} />
-            <IconComponent img={text} onClick={onClick} />
-            <IconComponent img={text} onClick={onClick} />
-            <IconComponent img={text} onClick={onClick} />
-            <IconComponent img={text} onClick={onClick} />
-            <IconComponent img={text} onClick={onClick} />
+            {eventGuests.map((value: UserMiniInfoType) => (
+              <IconComponent
+                key={value.userId}
+                img={value.userIcon}
+                onClick={onClick}
+              />
+            ))}
           </div>
         </div>
       </div>

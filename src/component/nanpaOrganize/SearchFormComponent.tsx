@@ -3,6 +3,7 @@ import { MiniContentEditComponent } from "component/nanpaComponent/MiniContentEd
 import { TipsContentEditComponent } from "component/nanpaComponent/TipsContentEditComponent";
 
 import React from "react";
+import { TagType } from "types/TagType";
 
 type LayoutProps = {
   title: string;
@@ -41,14 +42,13 @@ const InputLayout = (props: LayoutProps) => {
 };
 
 type Props = {
-  text: string;
+  onClick: () => void;
+  tagList: TagType[];
 };
 
 export const SearchFormComponent = (props: Props) => {
-  const { text } = props;
-  const onClick = () => {
-    console.log("point");
-  };
+  const { onClick, tagList } = props;
+
   return (
     <>
       <div
@@ -82,42 +82,15 @@ export const SearchFormComponent = (props: Props) => {
                 "inline-flex items-center justify-start flex-wrap gap-2 w-full"
               }
             >
-              <TipsContentEditComponent
-                color="red"
-                text="layout"
-                onClick={onClick}
-                select={true}
-              />
-              <TipsContentEditComponent
-                color="red"
-                text="layout"
-                onClick={onClick}
-                select={false}
-              />
-              <TipsContentEditComponent
-                color="red"
-                text="layout"
-                onClick={onClick}
-                select={false}
-              />
-              <TipsContentEditComponent
-                color="blue"
-                text="layout"
-                onClick={onClick}
-                select={false}
-              />
-              <TipsContentEditComponent
-                color="blue"
-                text="layout"
-                onClick={onClick}
-                select={true}
-              />
-              <TipsContentEditComponent
-                color="red"
-                text="layout"
-                onClick={onClick}
-                select={true}
-              />
+              {tagList.map((value: TagType) => (
+                <TipsContentEditComponent
+                  key={value.tagId}
+                  color={value.tagColor}
+                  text={value.tagValue}
+                  onClick={onClick}
+                  select={true}
+                />
+              ))}
             </div>
           </div>
           <InputLayout

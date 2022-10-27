@@ -7,13 +7,48 @@ import React from "react";
 import { MiniContentComponent } from "component/nanpaComponent/MiniContentComponent";
 import { TipsContentComponent } from "component/nanpaComponent/TipsContentComponent";
 import { ButtonNormalComponent } from "component/nanpaComponent/ButtonNormalComponent";
+import { TagType } from "types/TagType";
+import { EventType } from "types/EventType";
 
 type Props = {
-  personalLink: string;
+  userId: string;
+  userEmail: string;
+  userName: string;
+  userNickname: string;
+  userIcon: string;
+  userCoe: string;
+  userSl: string;
+  userComment: string;
+  userTags: TagType[];
+  userLineQr: string;
+  userTwitterId: string;
+  userInstagramId: string;
+  userFacebookId: string;
+  hostEvent: EventType[];
+  joinEvent: EventType[];
+  pastEvent: EventType[];
+  userTagsId: Array<number>;
 };
 
 export const PersonalViewComponent = (props: Props) => {
-  const { personalLink } = props;
+  const {
+    userEmail,
+    userName,
+    userNickname,
+    userIcon,
+    userCoe,
+    userSl,
+    userComment,
+    userTags,
+    userLineQr,
+    userTwitterId,
+    userInstagramId,
+    userFacebookId,
+    hostEvent,
+    joinEvent,
+    pastEvent,
+    userTagsId,
+  } = props;
   const onClick = () => {
     console.log("point");
   };
@@ -32,11 +67,7 @@ export const PersonalViewComponent = (props: Props) => {
             " w-full md:w-52 h-auto "
           }
         >
-          <img
-            src={personalLink}
-            className="w-full h-full object-contain"
-            alt=""
-          />
+          <img src={userIcon} className="w-full h-full object-contain" alt="" />
         </div>
         <div
           className={
@@ -45,25 +76,25 @@ export const PersonalViewComponent = (props: Props) => {
         >
           <div className={"inline-block md:w-1/2 md:px-2"}>
             <MiniTitleComponent text="名前" />
-            <MiniContentComponent text="龍ちゃんママ" />
+            <MiniContentComponent text={userNickname} />
           </div>
           <div className={"inline-block md:w-1/2 md:px-2"}>
             <MiniTitleComponent text="本名" />
-            <MiniContentComponent text="田中龍之介" />
+            <MiniContentComponent text={userName} />
           </div>
           <div className={"inline-block md:w-1/2 md:px-2"}>
             <MiniTitleComponent text="所属CoE" />
-            <MiniContentComponent text="エンジニア・クリエイターCoE" />
+            <MiniContentComponent text={userCoe} />
           </div>
           <div className={"inline-block md:w-1/2 md:px-2"}>
             <MiniTitleComponent text="所属SL" />
-            <MiniContentComponent text="PS" />
+            <MiniContentComponent text={userSl} />
           </div>
           <div className={"inline-block md:px-2 w-full"}>
             <div className={"inline-block w-full md:w-1/2"}>
               <MiniTitleComponent text="一言自己紹介" />
             </div>
-            <MiniContentComponent text="コンテントコンテントコンテントコンテントコンテントコンテントコンテントコンテントコンテントコンテントコンテントコンテントコンテントコンテントコンテントコンテントコンテントコンテントコンテントコンテントコンテントコンテントコンテントコンテントコンテントコンテントコンテントコンテントコンテントコンテントコンテントコンテントコンテントコンテントコンテントコンテントコンテントコンテントコンテントコンテントコンテントコンテントコンテントコンテント" />
+            <MiniContentComponent text={userComment} />
           </div>
           <div className={"inline-block md:px-2 w-full"}>
             <div className={"inline-block w-full md:w-1/2"}>
@@ -107,22 +138,22 @@ export const PersonalViewComponent = (props: Props) => {
                 }
               >
                 <IconContentComponent
-                  text="mail"
+                  text={userEmail}
                   IconContent={<GrMail className="w-full h-full" />}
                   onClick={onClick}
                 />
                 <IconContentComponent
-                  text="twitter"
+                  text={userTwitterId}
                   IconContent={<BsTwitter className="w-full h-full" />}
                   onClick={onClick}
                 />
                 <IconContentComponent
-                  text="instagram"
+                  text={userInstagramId}
                   IconContent={<GrInstagram className="w-full h-full" />}
                   onClick={onClick}
                 />
                 <IconContentComponent
-                  text="facebook"
+                  text={userFacebookId}
                   IconContent={<FaFacebookSquare className="w-full h-full" />}
                   onClick={onClick}
                 />

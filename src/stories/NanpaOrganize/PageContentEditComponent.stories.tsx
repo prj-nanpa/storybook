@@ -13,5 +13,28 @@ const Template: ComponentStory<typeof PageContentEditComponent> = (args) => (
 
 export const PageContentEdit = Template.bind({});
 PageContentEdit.args = {
-  text: "https://placehold.jp/150x150.png",
+  eventBudget: 100,
+  eventCreatedDate: "",
+  eventDate: "",
+  eventDeadline: "",
+  eventGuestLength: 0,
+  eventGuests: [],
+  eventId: 0,
+  eventImage: "",
+  eventLeftDate: 0,
+  eventMaxGuest: "",
+  eventMinGuest: "",
+  eventName: "",
+  eventNote: "",
+  eventOwner: {
+    userEmail: "**",
+    userIcon: "",
+    userId: "**",
+    userName: "",
+    userNickname: "",
+  },
+  eventPlace: "",
+  eventTags: [],
+  eventTagsId: [],
+  userId: "",
 };

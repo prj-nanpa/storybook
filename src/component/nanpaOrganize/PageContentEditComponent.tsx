@@ -2,6 +2,10 @@ import { ButtonRegisterComponent } from "component/nanpaComponent/ButtonRegister
 import { MiniContentEditComponent } from "component/nanpaComponent/MiniContentEditComponent";
 import { TipsContentEditComponent } from "component/nanpaComponent/TipsContentEditComponent";
 import React from "react";
+import { TagList } from "seed/Tag";
+import { EventType } from "types/EventType";
+import { TagType } from "types/TagType";
+import { UserMiniInfoType } from "types/UserMiniInfoType";
 
 type LayoutProps = {
   title: string;
@@ -67,10 +71,46 @@ const TextAreaLayout = (props: LayoutProps) => {
 };
 
 type Props = {
-  text: string;
+  eventId: number;
+  userId: string;
+  eventOwner: UserMiniInfoType;
+  eventLeftDate: number;
+  eventImage: string;
+  eventName: string;
+  eventNote: string;
+  eventDeadline: string;
+  eventDate: string;
+  eventPlace: string;
+  eventBudget: number;
+  eventMinGuest: string;
+  eventMaxGuest: string;
+  eventCreatedDate: string;
+  eventGuests: UserMiniInfoType[];
+  eventGuestLength: number;
+  eventTags: TagType[];
+  eventTagsId: number[];
 };
 export const PageContentEditComponent = (props: Props) => {
-  const { text } = props;
+  const {
+    eventBudget,
+    eventCreatedDate,
+    eventDate,
+    eventDeadline,
+    eventGuestLength,
+    eventGuests,
+    eventId,
+    eventImage,
+    eventLeftDate,
+    eventMaxGuest,
+    eventMinGuest,
+    eventName,
+    eventNote,
+    eventOwner,
+    eventPlace,
+    eventTags,
+    eventTagsId,
+    userId,
+  } = props;
   const onClick = () => {
     console.log("point");
   };
@@ -85,70 +125,46 @@ export const PageContentEditComponent = (props: Props) => {
       >
         <InputLayout
           title="イベント名"
-          input={<MiniContentEditComponent text="input" />}
+          input={<MiniContentEditComponent text={eventName} />}
         />
         <TextAreaLayout
           title="募集文章"
           input={
-            <textarea className="px-2 py-1 bg-gray-200/50 w-full h-36 resize-none" />
+            <textarea
+              className="px-2 py-1 bg-gray-200/50 w-full h-36 resize-none"
+              value={eventNote}
+            />
           }
         />
         <InputLayout
           title="募集締め切り"
-          input={<MiniContentEditComponent text="input" />}
+          input={<MiniContentEditComponent text={eventDeadline} />}
         />
         <InputLayout
           title="開催日時"
-          input={<MiniContentEditComponent text="input" />}
+          input={<MiniContentEditComponent text={eventDate} />}
         />
         <InputLayout
           title="開催場所"
-          input={<MiniContentEditComponent text="input" />}
+          input={<MiniContentEditComponent text={eventPlace} />}
         />
         <InputLayout
           title="予算"
-          input={<MiniContentEditComponent text="input" />}
+          input={<MiniContentEditComponent text={eventBudget.toString()} />}
         />
         <InputLayout
           title="タグ"
           input={
             <>
-              <TipsContentEditComponent
-                color="red"
-                text="layout"
-                onClick={onClick}
-                select={true}
-              />
-              <TipsContentEditComponent
-                color="red"
-                text="layout"
-                onClick={onClick}
-                select={false}
-              />
-              <TipsContentEditComponent
-                color="red"
-                text="layout"
-                onClick={onClick}
-                select={false}
-              />
-              <TipsContentEditComponent
-                color="blue"
-                text="layout"
-                onClick={onClick}
-                select={false}
-              />
-              <TipsContentEditComponent
-                color="blue"
-                text="layout"
-                onClick={onClick}
-                select={true}
-              />
-              <TipsContentEditComponent
-                color="red"
-                text="layout"
-                onClick={onClick}
-                select={true}
-              />
+              {TagList.map((value: TagType) => (
+                <TipsContentEditComponent
+                  key={value.tagId}
+                  color={value.tagColor}
+                  text={value.tagValue}
+                  select={false}
+                  onClick={onClick}
+                />
+              ))}
             </>
           }
         />
@@ -159,11 +175,13 @@ export const PageContentEditComponent = (props: Props) => {
               <input
                 className="px-2 py-1 bg-gray-200/50 w-12 h-8"
                 type="text"
+                value={eventMinGuest}
               />
               ~
               <input
                 className="px-2 py-1 bg-gray-200/50 w-12 h-8"
                 type="text"
+                value={eventMaxGuest}
               />
             </div>
           }

@@ -13,5 +13,41 @@ const Template: ComponentStory<typeof CommentComponent> = (args) => (
 
 export const Comment = Template.bind({});
 Comment.args = {
-  text: "https://placehold.jp/150x150.png",
+  commentDataList: [
+    {
+      userId: "xxxx",
+      userIcon:
+        "https://placehold.jp/30/dd6699/ffffff/150x150.png?text=placeholder+image",
+      commentDate: "2021-12-21",
+      commentText: "comment",
+    },
+    {
+      userId: "xxxx",
+      userIcon:
+        "https://placehold.jp/30/dd6699/ffffff/150x150.png?text=placeholder+image",
+      commentDate: "2021-12-21",
+      commentText: "comment",
+    },
+    {
+      userId: "xxxx",
+      userIcon:
+        "https://placehold.jp/30/dd6699/ffffff/150x150.png?text=placeholder+image",
+      commentDate: "2021-12-21",
+      commentText: "comment",
+    },
+    {
+      userId: "xxxx",
+      userIcon:
+        "https://placehold.jp/30/dd6699/ffffff/150x150.png?text=placeholder+image",
+      commentDate: "2021-12-21",
+      commentText: "comment",
+    },
+    {
+      userId: "xxxx",
+      userIcon:
+        "https://placehold.jp/30/dd6699/ffffff/150x150.png?text=placeholder+image",
+      commentDate: "2021-12-21",
+      commentText: "comment",
+    },
+  ],
 };

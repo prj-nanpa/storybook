@@ -7,13 +7,48 @@ import { ButtonNormalComponent } from "component/nanpaComponent/ButtonNormalComp
 import { MiniContentEditComponent } from "component/nanpaComponent/MiniContentEditComponent";
 import { IconContentEditComponent } from "component/nanpaComponent/IconContentEditComponent";
 import { TipsContentEditComponent } from "component/nanpaComponent/TipsContentEditComponent";
+import { EventType } from "types/EventType";
+import { TagType } from "types/TagType";
 
 type Props = {
-  personalLink: string;
+  userId: string;
+  userEmail: string;
+  userName: string;
+  userNickname: string;
+  userIcon: string;
+  userCoe: string;
+  userSl: string;
+  userComment: string;
+  userTags: TagType[];
+  userLineQr: string;
+  userTwitterId: string;
+  userInstagramId: string;
+  userFacebookId: string;
+  hostEvent: EventType[];
+  joinEvent: EventType[];
+  pastEvent: EventType[];
+  userTagsId: Array<number>;
 };
 
 export const PersonalEditComponent = (props: Props) => {
-  const { personalLink } = props;
+  const {
+    userEmail,
+    userName,
+    userNickname,
+    userIcon,
+    userCoe,
+    userSl,
+    userComment,
+    userTags,
+    userLineQr,
+    userTwitterId,
+    userInstagramId,
+    userFacebookId,
+    hostEvent,
+    joinEvent,
+    pastEvent,
+    userTagsId,
+  } = props;
   const onClick = () => {
     console.log("point");
   };
@@ -32,11 +67,7 @@ export const PersonalEditComponent = (props: Props) => {
             " w-full md:w-52 h-auto "
           }
         >
-          <img
-            src={personalLink}
-            className="w-full h-full object-contain"
-            alt=""
-          />
+          <img src={userIcon} className="w-full h-full object-contain" alt="" />
         </div>
         <div
           className={
@@ -45,19 +76,19 @@ export const PersonalEditComponent = (props: Props) => {
         >
           <div className={"inline-block md:w-1/2 md:px-2"}>
             <MiniTitleComponent text="名前" />
-            <MiniContentEditComponent text="龍ちゃんママ" />
+            <MiniContentEditComponent text={userNickname} />
           </div>
           <div className={"inline-block md:w-1/2 md:px-2"}>
             <MiniTitleComponent text="本名" />
-            <MiniContentEditComponent text="龍ちゃんママ" />
+            <MiniContentEditComponent text={userName} />
           </div>
           <div className={"inline-block md:w-1/2 md:px-2"}>
             <MiniTitleComponent text="所属CoE" />
-            <MiniContentEditComponent text="龍ちゃんママ" />
+            <MiniContentEditComponent text={userCoe} />
           </div>
           <div className={"inline-block md:w-1/2 md:px-2"}>
             <MiniTitleComponent text="所属SL" />
-            <MiniContentEditComponent text="龍ちゃんママ" />
+            <MiniContentEditComponent text={userSl} />
           </div>
           <div className={"inline-block md:px-2 w-full"}>
             <div className={"inline-block w-full md:w-1/2"}>
@@ -66,6 +97,7 @@ export const PersonalEditComponent = (props: Props) => {
             <textarea
               className={"px-2 py-1 w-full h-40 bg-gray-200/50 resize-none"}
               placeholder="input"
+              value={userComment}
             />
           </div>
           <div className={"inline-block md:px-2 w-full"}>
@@ -113,22 +145,22 @@ export const PersonalEditComponent = (props: Props) => {
                 }
               >
                 <IconContentEditComponent
-                  text="mail"
+                  text={userEmail}
                   IconContent={<GrMail className="w-full h-full" />}
                   onClick={onClick}
                 />
                 <IconContentEditComponent
-                  text="twitter"
+                  text={userTwitterId}
                   IconContent={<BsTwitter className="w-full h-full" />}
                   onClick={onClick}
                 />
                 <IconContentEditComponent
-                  text="instagram"
+                  text={userInstagramId}
                   IconContent={<GrInstagram className="w-full h-full" />}
                   onClick={onClick}
                 />
                 <IconContentEditComponent
-                  text="facebook"
+                  text={userFacebookId}
                   IconContent={<FaFacebookSquare className="w-full h-full" />}
                   onClick={onClick}
                 />
@@ -140,7 +172,7 @@ export const PersonalEditComponent = (props: Props) => {
                 }
               >
                 <img
-                  src="https://placehold.jp/150x150.png"
+                  src={userLineQr}
                   className="w-full md:w-10/12 h-full object-contain"
                   alt=""
                 />

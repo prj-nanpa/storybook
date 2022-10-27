@@ -3,16 +3,17 @@ import { MiniContentEditComponent } from "component/nanpaComponent/MiniContentEd
 import React from "react";
 
 import { TbSend } from "react-icons/tb";
+import { CommentType } from "types/CommentType";
 
 type CommentProps = {
   comment: string;
   icon: string;
-  target: string;
+  date: string;
   owner: boolean;
   onClick: () => void;
 };
 const ACommentComponent = (props: CommentProps) => {
-  const { comment, icon, target, owner, onClick } = props;
+  const { comment, icon, date, owner, onClick } = props;
   return (
     <>
       <div
@@ -28,11 +29,11 @@ const ACommentComponent = (props: CommentProps) => {
             " w-full h-5"
           }
         >
-          {target}
+          {date}
         </div>
         <div
           className={
-            `inline-flex ${owner ? " flex-row " : " flex-row-reverse "}` +
+            `inline-flex ${owner ? " flex-row-reverse " : " flex-row "}` +
             " items-start gap-x-1 w-full"
           }
         >
@@ -51,11 +52,11 @@ const ACommentComponent = (props: CommentProps) => {
 };
 
 type Props = {
-  text: string;
+  commentDataList: CommentType[];
 };
 
 export const CommentComponent = (props: Props) => {
-  const { text } = props;
+  const { commentDataList } = props;
 
   const onClick = () => {
     console.log("point");
@@ -75,27 +76,16 @@ export const CommentComponent = (props: Props) => {
             "w-full h-96"
           }
         >
-          <ACommentComponent
-            comment="コメント"
-            icon={text}
-            onClick={onClick}
-            owner={true}
-            target={""}
-          />
-          <ACommentComponent
-            comment="コメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメント"
-            icon={text}
-            onClick={onClick}
-            owner={false}
-            target={"@dtrz"}
-          />
-          <ACommentComponent
-            comment="コメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメント"
-            icon={text}
-            onClick={onClick}
-            owner={true}
-            target={"@dtrz"}
-          />
+          {commentDataList.map((value: CommentType, index: number) => (
+            <ACommentComponent
+              key={index}
+              comment={value.commentText}
+              date={value.commentDate}
+              icon={value.userIcon}
+              onClick={onClick}
+              owner={true}
+            />
+          ))}
         </div>
         <div className={"inline-flex flex-col " + "w-full max-w-3xl "}>
           <div className={"inline-flex flex-row " + " w-full "}>
